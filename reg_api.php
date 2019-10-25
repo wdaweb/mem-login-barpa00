@@ -11,6 +11,40 @@
 
 
 
+echo $acc=$_POST['acc'];
+echo "<br>";
+echo $pw=$_POST['pw'];
+echo "<br>";
+echo $name=$_POST['name'];
+echo "<br>";
+echo $addr=$_POST['addr'];
+echo "<br>";
+echo $tel=$_POST['tel'];
+echo "<br>";
+echo $date=$_POST['date'];
+echo "<br>";
+echo $mail=$_POST['mail'];
+echo "<br>";
+
+
+$dsn="mysql:host=localhost;charset=utf8;dbname=mydb";
+$pdo=new PDO($dsn, 'root', '');
+
+$sql="insert into user (`acc`,`pw`,`name`,`addr`,`tel`,`birthday`,`email`) values('$acc','$pw','$name','$addr','$tel','$date','$mail')";
+
+echo "sql語法是".$sql;
+
+//$pdo->exec($sql)  用在不需要回傳資料時 del,update,insert
+//echo $pdo->exec($sql);
+// 判斷是否成功
+if($pdo->exec($sql)){
+    //echo"新增成功";
+    header("location:index.php?s=1");
+}else{
+    //echo "失敗";
+    header("location:reg.php?s=2");
+}
+
 
 
 ?>
