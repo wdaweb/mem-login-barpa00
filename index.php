@@ -14,6 +14,10 @@
     echo"註冊成功 請輸入帳密登入";
   }
 
+  if(!empty($_GET['err'])){
+    echo "<h2>帳號無效或失敗</h2>";
+  }
+
 ?>
   <h1>會員登入</h1>
 <form action="login_api.php" method="post"> 
