@@ -1,7 +1,7 @@
 <?php
   include_once "base.php";
   
- if(empty($_SESSION['login'])){
+ if(empty($_COOKIE['login'])){
   exit();
 }
 ?>
@@ -39,7 +39,7 @@
       <?php
         
       
-        $sql="select * from user where id='".$_SESSION['id']."'";
+        $sql="select * from user where id='".$_COOKIE['id']."'";
         //echo $sql;
         $user=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         //print_r($user);
@@ -79,13 +79,9 @@
           <td><?=$user['email'];?></td>
         </tr>
       </table>
-<<<<<<< HEAD
       <div>
         <a href="./index.php">回首頁</a>
       </div>
-=======
-
->>>>>>> master
 
     </div>
   </div>
