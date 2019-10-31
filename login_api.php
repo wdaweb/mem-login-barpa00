@@ -33,6 +33,8 @@ if(!empty($data)){
   $_SESSION['login']=1;
   $_SESSION['id']=$data['id'];
   header("location:member_center.php");
+
+  
 }else{
   echo "登入失敗";
   header("location:index.php?err=1");

@@ -79,9 +79,13 @@
           <td><?=$user['email'];?></td>
         </tr>
       </table>
+<<<<<<< HEAD
       <div>
         <a href="./index.php">回首頁</a>
       </div>
+=======
+
+>>>>>>> master
 
     </div>
   </div>
