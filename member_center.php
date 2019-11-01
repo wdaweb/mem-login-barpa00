@@ -2,7 +2,8 @@
   include_once "base.php";
   
  if(empty($_SESSION['login'])){
-   header("location:index.php");
+  header("location:index.php");
+
   exit();
 }
 ?>
@@ -46,7 +47,7 @@
         $user=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         //print_r($user);
       ?>
-
+      <form action="./edit_user.php" method="post">
       <table>
         <tr>
           <td>id</td>
@@ -62,29 +63,35 @@
         </tr>
         <tr>
           <td>name</td>
-          <td><?=$user['name'];?></td>
+          <td><input type="text" name="name" id="name" value="<?=$user['name'];?>"></td>
         </tr>
         <tr>
           <td>addr</td>
-          <td><?=$user['addr'];?></td>
+          <td><input type="text" name="addr" id="name" value="<?=$user['addr'];?>"></td>
         </tr>
         <tr>
           <td>tel</td>
-          <td><?=$user['tel'];?></td>
+          <td><input type="tel" name="tel" id="tel" value="<?=$user['tel'];?>"></td>
         </tr>
         <tr>
           <td>birthday</td>
-          <td><?=$user['birthday'];?></td>
+          <td><input type="birthday" name="birthday" id="birthday" value="<?=$user['birthday'];?>"></td>
         </tr>
         <tr>
           <td>email</td>
-          <td><?=$user['email'];?></td>
+          <td><input type="text" name="email" id="email" value="<?=$user['email'];?>"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+          <input type="hidden" name="id" value="<?=$user['id'];?>">
+          <input type="submit" value="編輯">
+          </td>
         </tr>
       </table>
+      </form>
       <div>
         <a href="./index.php">回首頁</a>
-        
-      <br>
+      </div>
     </div>
   </div>
 </body>
