@@ -44,7 +44,7 @@ $rows=$pdo->query($sql)->fetchAll(); //取全部的資料
             <td><?=$user['addr'];?></td>
             <td><?=$user['tel'];?></td>
             <td><?=$user['email'];?></td>
-            <td><a href="del_user.php">刪除</a></td>
+            <td><a href="del_user.php?id=<?=$user['id'];?>">刪除</a></td>
         </tr>
     <?php
     }
